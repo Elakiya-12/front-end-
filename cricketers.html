@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+    <style>
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#FFB6C1;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Heading */
+        h1 {
+            color: #800020;
+        }
+
+        /* Team Section */
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Profile Card */
+        .team-member {
+            background:#ADD8E6 ;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+        }
+
+        /* Profile Images */
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #800020;
+        }
+
+        /* Name & Role Styling */
+        .team-member h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .team-member p {
+            color: #800020;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>"The Game Changers🏏⚾"</h1>
+
+    <div class="team-container">
+        <div class="team-member">
+            <img src="dhoni.jpg" alt="M.S. Dhoni">
+            <h3>M.S. Dhoni</h3>
+            <p>Captain & Wicketkeeper</p>
+        </div>
+
+        <div class="team-member">
+            <img src="virat.jpg" alt="Virat Kohli">
+            <h3>Virat Kohli</h3>
+            <p>Batsman</p>
+        </div>
+
+        <div class="team-member">
+            <img src="klrahul.jpg" alt="K.L. Rahul">
+            <h3>K.L. Rahul</h3>
+            <p>Batsman & Wicketkeeper</p>
+        </div>
+
+        <div class="team-member">
+            <img src="jadega.jpg" alt="Ravindra Jadeja">
+            <h3>Ravindra Jadeja</h3>
+            <p>All-rounder</p>
+        </div>
+
+        <div class="team-member">
+            <img src="ruturaj.jpg" alt="Ruturaj Gaikwad">
+            <h3>Ruturaj Gaikwad</h3>
+            <p>Batsman</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Portfolio Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 800px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto; /* Auto height to maintain aspect ratio */
+            max-height: 200px; /* Limit the maximum height */
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <img src="https://www.hdwallpapers.in/download/vijay_in_white_shirt_4k_hd_master-1920x1080.jpg" alt="vijay">
+        <img src="https://c4.wallpaperflare.com/wallpaper/361/887/810/abhimanyudu-samantha-2018-telugu-wallpaper-preview.jpg" alt="samantha">
+        <img src="https://wallpapercave.com/wp/wp4110361.jpg" alt="dulqer">
+        <img src="https://e0.pxfuel.com/wallpapers/5/966/desktop-wallpaper-sushant-name-sushant-singh-rajput-with-mom.jpg" alt="sushant">
+        <img src="https://m.media-amazon.com/images/M/MV5BMTdmZTYzNTgtNzk2Ni00NzFlLTg5YWQtZDFmYzcwNmE3YWMyXkEyXkFqcGc@._V1_.jpg" alt="kimjiwon">
+        <img src="https://rare-gallery.com/mocahbig/1310912-Indian-ActorVijay-Deverakonda-HD-Wallpaper.jpg" alt="vijay devarkonda">
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

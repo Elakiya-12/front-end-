@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress Shopping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dress Shopping</h1>
+        <input type="text" id="search" placeholder="Search for dresses...">
+        <button onclick="filterDresses()">Search</button>
+    </header>
+    
+    <section class="product-list">
+        <div class="product" data-category="casual">
+            <img src="dress1.jpg" alt="Casual Dress">
+            <h2>Casual Dress</h2>
+            <p>$25</p>
+            <button onclick="addToCart('Casual Dress', 25)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="party">
+            <img src="dress2.jpg" alt="Party Dress">
+            <h2>Party Dress</h2>
+            <p>$40</p>
+            <button onclick="addToCart('Party Dress', 40)">Add to Cart</button>
+        </div>
+    </section>
+    
+    <h2>Shopping Cart</h2>
+    <ul id="cart"></ul>
+    
+    <script src="script.js"></script>
+</body>
+</html>
