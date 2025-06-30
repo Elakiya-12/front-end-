@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎀 Student Manager</title>
+  <style>
+    body {
+      background: pink;
+      font-family: Arial;
+      color: darkmagenta;
+      padding: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 5px;
+    }
+    table {
+      width: 100%;
+      border: 1px solid purple;
+      background: #ffe6f0;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid plum;
+      padding: 8px;
+      text-align: center;
+    }
+    .pass {
+      background: #e0ffe0;
+    }
+    .fail {
+      background: #ffe0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎓  Student Manager</h2>
+
+  Name: <input id="name">
+  Marks: <input id="marks" type="number">
+  <button onclick="addStudent()">Add</button>
+  <button onclick="showTopper()">Show Topper</button>
+  <button onclick="clearAll()">Clear All</button>
+
+  <p>Total Students: <span id="count">0</span></p>
+  <p>Topper: <span id="topper">None</span></p>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Marks</th>
+      <th>Status</th>
+      <th>Delete</th>
+    </tr>
+    <tbody id="studentList"></tbody>
+  </table>
+
+  <script>
+    let students = [];
+
+    function addStudent() {
+      let name = document.getElementById("name").value;
+      let marks = document.getElementById("marks").value;
+      if (name === "" || marks === "") {
+        alert("Please enter name and marks");
+        return;
+      }
+      students.push({ name: name, marks: Number(marks) });
+      showStudents();
+      document.getElementById("name").value = "";
+      document.getElementById("marks").value = "";
+    }
+
+    function deleteStudent(index) {
+      students.splice(index, 1);
+      showStudents();
+    }
+
+    function showStudents() {
+      let list = document.getElementById("studentList");
+      list.innerHTML = "";
+      students.forEach((s, i) => {
+        let status = s.marks >= 40 ? "Pass" : "Fail";
+        let rowClass = s.marks >= 40 ? "pass" : "fail";
+        list.innerHTML += `
+          <tr class="${rowClass}">
+            <td>${s.name}</td>
+            <td>${s.marks}</td>
+            <td>${status}</td>
+            <td><button onclick="deleteStudent(${i})">Delete</button></td>
+          </tr>
+        `;
+      });
+      document.getElementById("count").innerText = students.length;
+      document.getElementById("topper").innerText = students.length
+        ? students.reduce((a, b) => a.marks > b.marks ? a : b).name
+        : "None";
+    }
+
+    function showTopper() {
+      if (students.length === 0) {
+        alert("No students yet!");
+        return;
+      }
+      let top = students.reduce((a, b) => a.marks > b.marks ? a : b);
+      alert("🎉 Topper is " + top.name + " with " + top.marks + " marks");
+    }
+
+    function clearAll() {
+      if (confirm("Clear all students?")) {
+        students = [];
+        showStudents();
+      }
+    }
+  </script>
+
+</body>
+</html>
